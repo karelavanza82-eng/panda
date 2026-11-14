@@ -7,13 +7,6 @@ on:
         description: Build a signed Universal GMS release APK for manual testing
         type: boolean
         default: true
-  push:
-    branches: [ '**' ]
-    paths-ignore:
-      - 'README.md'
-      - 'fastlane/**'
-      - 'assets/**'
-      - '.github/**/*.md'
   pull_request:
     branches: [ '**' ]
 
