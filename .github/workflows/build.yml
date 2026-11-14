@@ -7,6 +7,13 @@ on:
         description: Build a signed Universal GMS release APK for manual testing
         type: boolean
         default: true
+  push:
+    branches: [ '**' ]
+    paths-ignore:
+      - 'README.md'
+      - 'fastlane/**'
+      - 'assets/**'
+      - '.github/**/*.md'
   pull_request:
     branches: [ '**' ]
 
@@ -68,7 +75,6 @@ jobs:
 
   test_release:
     name: Signed Android test release
-    if: false
     if: github.event_name == 'workflow_dispatch' && inputs.test_release
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -82,6 +88,7 @@ jobs:
         with:
           java-version: '21'
           distribution: temurin
+      - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
         with:
           cache-read-only: true

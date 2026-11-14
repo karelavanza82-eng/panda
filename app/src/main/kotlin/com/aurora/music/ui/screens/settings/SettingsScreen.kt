@@ -442,16 +442,19 @@ private fun AuroraSettingsDashboard(
     trailing: (SettingsLink) -> String?,
     onAction: (SettingsAction) -> Unit,
 ) {
+    // Read the composable theme values here, in composable scope; `tile` below is a plain
+    // local function and must not touch IosTheme.colors itself.
+    val iosColors = IosTheme.colors
     val colors = AuroraTileColors(
-        container = IosTheme.colors.secondarySystemGroupedBackground,
-        content = IosTheme.colors.label,
-        secondary = IosTheme.colors.secondaryLabel,
+        container = iosColors.secondarySystemGroupedBackground,
+        content = iosColors.label,
+        secondary = iosColors.secondaryLabel,
     )
     fun tile(link: SettingsLink) = AuroraTileData(
         title = link.title,
         caption = tileCaption(link),
         icon = link.icon,
-        tint = link.tint(IosTheme.colors),
+        tint = link.tint(iosColors),
         badge = trailing(link),
         onClick = { onAction(link.action) },
     )
