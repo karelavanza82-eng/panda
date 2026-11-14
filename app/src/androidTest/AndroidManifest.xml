@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <instrumentation
+        android:name="com.aurora.music.network.NetworkSecurityInstrumentation"
+        android:targetPackage="com.aurora.music.debug"
+        android:label="Network security regression checks" />
+    <instrumentation
+        android:name="com.aurora.music.db.RoomMigrationTestRunner"
+        android:targetPackage="com.aurora.music.debug"
+        android:label="Room migration tests" />
+</manifest>

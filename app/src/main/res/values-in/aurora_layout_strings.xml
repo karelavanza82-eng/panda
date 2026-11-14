@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aurora_greeting_morning">Selamat pagi</string>
+    <string name="aurora_greeting_afternoon">Selamat siang</string>
+    <string name="aurora_greeting_evening">Selamat sore</string>
+    <string name="aurora_greeting_night">Selamat malam</string>
+    <string name="aurora_home_tagline">Mau dengerin apa hari ini?</string>
+</resources>
